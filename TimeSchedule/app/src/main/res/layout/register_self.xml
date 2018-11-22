@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="#fa7a67">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:weightSum="640">
-
+        android:weightSum="640"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -23,12 +20,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="시간표 등록"
-                android:textColor="#51535d"
+                android:text="자기개발 등록"
+                android:textColor="#1a2338"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/nanumsquareeb"
-                android:gravity="center" />
+                android:gravity="center"
+                android:fontFamily="@font/nanumsquareeb"/>
         </LinearLayout>
 
         <View
@@ -36,25 +33,21 @@
             android:layout_height="3dp"
             android:background="#b9b9b9"/>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="560"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
             android:orientation="vertical"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="16sp"
             android:weightSum="8">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:weightSum="2"
-                android:background="#ffffff"
                 android:orientation="vertical">
-
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -69,25 +62,25 @@
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:scaleType="centerInside"
-                        android:src="@drawable/sche_on"
-                        android:background="#ffffff"/>
+                        android:src="@drawable/sche_off_r"
+                        android:background="#fa7a67"/>
                     <ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:scaleType="centerInside"
-                        android:src="@drawable/sleep_off_w"
+                        android:src="@drawable/sleep_off_r"
                         android:padding="3dp"
-                        android:background="#ffffff"/>
+                        android:background="#fa7a67"/>
                     <ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:scaleType="centerInside"
-                        android:src="@drawable/develope_off_w"
-                        android:background="#ffffff"/>
+                        android:src="@drawable/develope_on"
+                        android:background="#fa7a67"/>
 
                 </LinearLayout>
                 <LinearLayout
@@ -95,76 +88,77 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
+                    android:padding="5dp"
                     android:weightSum="7">
 
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/mon_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/mon_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/mon_g"/>
+                        android:id="@+id/mon_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/tue_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/tue_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/tue_g"/>
+                        android:id="@+id/tue_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/wen_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/wen_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/wen_g"/>
+                        android:id="@+id/wen_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/thu_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/thu_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/thu_g"/>
+                        android:id="@+id/thu_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/fri_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/fri_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/fri_g"/>
+                        android:id="@+id/fri_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/sat_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/sat_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/sat_g"/>
+                        android:id="@+id/sat_r"/>
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:src="@drawable/sun_g_select"
+                        android:background="#fa7a67"
+                        android:src="@drawable/sun_r_select"
                         android:scaleType="centerInside"
                         android:layout_weight="1"
-                        android:id="@+id/sun_g"/>
+                        android:id="@+id/sun_r"/>
                 </LinearLayout>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#b9b9b9"/>
+                android:background="#ffffff"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#ffffff"
+                android:background="#fa7a67"
                 android:orientation="horizontal"
                 android:weightSum="7">
 
@@ -174,41 +168,40 @@
                     android:layout_weight="1"
                     android:text="시간"
                     android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center" />
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
                     android:text="오후 3:00 ~ 오후 5:00"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:background="@android:color/transparent"/>
             </LinearLayout>
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#b9b9b9"/>
-
+                android:background="#ffffff"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:background="#fa7a67"
                 android:orientation="horizontal"
-                android:weightSum="7"
-                android:background="#ffffff">
+                android:weightSum="7">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="제목"
+                    android:text="장소"
                     android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"/>
 
                 <EditText
@@ -216,87 +209,23 @@
                     android:layout_height="match_parent"
                     android:layout_weight="6"
                     android:text="컴퓨터 그래픽스"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"/>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#b9b9b9"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:orientation="horizontal"
-                android:weightSum="7">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="장소"
-                    android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:text="이권석 교수님"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#b9b9b9"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:orientation="horizontal"
-                android:weightSum="7">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="장소"
-                    android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:text="조형관 405호"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#b9b9b9"/>
+                android:background="#ffffff"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:weightSum="7"
                 android:orientation="horizontal"
-                android:background="#ffffff">
+                android:background="#fa7a67">
 
                 <TextView
                     android:layout_width="0dp"
@@ -304,8 +233,8 @@
                     android:layout_weight="1"
                     android:text="색상"
                     android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"/>
 
                 <LinearLayout
@@ -327,64 +256,64 @@
                             android:layout_weight="1"
                             android:src="@drawable/red_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/red"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/red_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/orange_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/orange"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/orange_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/yellow_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/yellow"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/yellow_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/ye_green_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/ye_green"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/ye_green_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/green_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/green"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/green_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/gr_mint_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/gr_mint"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/gr_mint_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/mint_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/mint"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/mint_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/sky_blue_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/sky_blue"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/sky_blue_r"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -397,67 +326,75 @@
                             android:layout_weight="1"
                             android:src="@drawable/blue_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/blue"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/blue_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/ocean_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/ocean"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/ocean_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/bl_purple_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/bl_purple"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/bl_purple_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/purple_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/purple"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/purple_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/pu_pink_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/pu_pink"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/pu_pink_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/pink_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/pink"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/pink_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/gray_b_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/gray_b"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/gray_b_r"/>
                         <ImageButton
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:src="@drawable/gray_w_select"
                             android:scaleType="centerInside"
-                            android:background="#ffffff"
-                            android:id="@+id/gray_w"/>
+                            android:background="#fa7a67"
+                            android:id="@+id/gray_w_r"/>
                     </LinearLayout>
                 </LinearLayout>
-
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
             </LinearLayout>
         </LinearLayout>
 
@@ -471,22 +408,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#ffffff"
+                android:background="#fa7a67"
                 android:text="만들기"
                 android:fontFamily="@font/nanumsquareb"
-                android:textColor="#1a2338"
-                android:id="@+id/btn_make"/>
+                android:textColor="#ffffff"
+                android:id="@+id/btn_make_r"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#ffffff"
+                android:background="#fa7a67"
                 android:text="삭제하기"
                 android:fontFamily="@font/nanumsquareb"
-                android:textColor="#1a2338"
-                android:id="@+id/btn_del"/>
+                android:textColor="#ffffff"
+                android:id="@+id/btn_del_r"/>
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
