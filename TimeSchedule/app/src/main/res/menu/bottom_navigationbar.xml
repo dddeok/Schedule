@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xmls="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_one"
+        xmls:showAsAction="always"
+        android:icon="@drawable/time_sche_off"
+        android:enabled="true"
+        android:title="" />
+    <item
+        android:id="@+id/action_two"
+        xmls:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/spare_time_off"
+        android:title=""/>
+    <item
+        android:id="@+id/action_three"
+        xmls:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/self_de_off"
+        android:title=""/>
+</menu>

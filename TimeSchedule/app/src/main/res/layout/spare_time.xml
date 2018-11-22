@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a2338">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="600"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:orientation="vertical"
+            android:background="@drawable/rectangle_frame">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="가용시간 정보"
+                android:textColor="#444a58"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/nanumsquareeb"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#b9b9b9"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="560"
+            android:orientation="vertical"
+            android:layout_marginLeft="16sp"
+            android:layout_marginRight="16sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16sp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="2018년 11월 05일 일요일"
+                        android:textSize="20sp"
+                        android:textColor="#ffffff"
+                        android:gravity="center"
+                        android:fontFamily="@font/nanumsquareb"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="오늘"
+                        android:textSize="30sp"
+                        android:textColor="#ffffff"
+                        android:gravity="center"
+                        android:fontFamily="@font/nanumsquareb"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="136sp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/circle"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:id="@+id/circle"
+                        android:text="6H"
+                        android:textColor="#ffffff"
+                        android:textSize="39sp"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
