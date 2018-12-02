@@ -21,7 +21,7 @@ public class main_schedule extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         View view = (View)inflater.inflate(R.layout.schedule,container,false);
+        View view = (View)inflater.inflate(R.layout.schedule,container,false);
 
         TableLayout table = (TableLayout) view.findViewById(R.id.table);
                 table.setOnClickListener(new View.OnClickListener() {
