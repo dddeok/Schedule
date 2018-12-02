@@ -180,12 +180,34 @@
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:text="오후 3:00 ~ 오후 5:00"
+                    android:layout_weight="2.5"
                     android:textColor="#000000"
                     android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:hint="StartTiem"
+                    android:textColorHint="#000000"
+                    android:id="@+id/startTime"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:text="~"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center" />
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:hint="EndTime"
+                    android:textColorHint="#000000"
+                    android:id="@+id/endTime"/>
             </LinearLayout>
 
             <View
@@ -215,11 +237,48 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
-                    android:text="컴퓨터 그래픽스"
+                    android:hint="과목을 입력하세요"
+                    android:textColorHint="#000000"
                     android:textColor="#000000"
                     android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:id="@+id/register_subject"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#b9b9b9"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="교수"
+                    android:textSize="16sp"
+                    android:textColor="#8e8e8e"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:hint="교수명을 입력하세요"
+                    android:textColorHint="#000000"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:id="@+id/register_professor"/>
+
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -240,51 +299,20 @@
                     android:text="장소"
                     android:textSize="16sp"
                     android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
+                    android:fontFamily="@font/nanumsquareb"
                     android:gravity="center"/>
 
                 <EditText
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="6"
-                    android:text="이권석 교수님"
+                    android:hint="장소를 입력하세요"
+                    android:textColorHint="#000000"
                     android:textColor="#000000"
                     android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#b9b9b9"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:orientation="horizontal"
-                android:weightSum="7">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="장소"
-                    android:textSize="16sp"
-                    android:textColor="#8e8e8e"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:text="조형관 405호"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:fontFamily="nanumsqureb"
-                    android:gravity="center"/>
+                    android:fontFamily="@font/nanumsquareb"
+                    android:gravity="center"
+                    android:id="@+id/register_place"/>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -475,7 +503,8 @@
                 android:text="만들기"
                 android:fontFamily="@font/nanumsquareb"
                 android:textColor="#1a2338"
-                android:id="@+id/btn_make"/>
+                android:id="@+id/btn_make"
+                android:clickable="true"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -484,7 +513,8 @@
                 android:text="삭제하기"
                 android:fontFamily="@font/nanumsquareb"
                 android:textColor="#1a2338"
-                android:id="@+id/btn_del"/>
+                android:id="@+id/btn_del"
+                android:clickable="true"/>
         </LinearLayout>
 
     </LinearLayout>
