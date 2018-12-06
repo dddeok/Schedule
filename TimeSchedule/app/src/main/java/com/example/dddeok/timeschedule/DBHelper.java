@@ -1,6 +1,7 @@
 package com.example.dddeok.timeschedule;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -45,5 +46,31 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL(_query);
         db.close();
+    }
+
+    public String PrintData (){
+        SQLiteDatabase db = getReadableDatabase();
+        String str = "";
+
+        Cursor cursor = db.rawQuery("select * from timetable", null);
+        while(cursor.moveToNext()){
+            str +=cursor.getString(0)
+                    + " day :  "
+                    + cursor.getString(1)
+                    + ", _startime : "
+                    + cursor.getString(2)
+                    + ", _endtime : "
+                    + cursor.getString(3)
+                    + ", subject : "
+                    + cursor.getString(4)
+                    + ", professor : "
+                    + cursor.getString(5)
+                    + ", place : "
+                    + cursor.getString(6)
+                    + ", color : "
+                    + cursor.getString(7)
+                    + "\n";
+        }
+        return str;
     }
 }

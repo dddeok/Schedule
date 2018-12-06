@@ -1,5 +1,6 @@
 package com.example.dddeok.timeschedule;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,13 +13,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class register1 extends Fragment {
     Button btn_make;
     Button btn_cancel;
 
-    String day, color;
+    String day;
+    String color;
     boolean select_day = false, select_color = false;
 
 
@@ -38,8 +41,10 @@ public class register1 extends Fragment {
         final EditText _subject = (EditText)view.findViewById(R.id.register_subject);
         final EditText _professor = (EditText)view.findViewById(R.id.register_professor);
         final EditText _place = (EditText)view.findViewById(R.id.register_place);
+        final TextView dbtest = (TextView) view.findViewById(R.id.dbtest);
 
         btn_make = (Button)view.findViewById(R.id.btn_make);
+
         btn_make.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +58,8 @@ public class register1 extends Fragment {
                                     + subject +"', '" + professor + "', '" + place + "', '" + color +"');" );
 
                 Toast.makeText(getActivity(),"시간 추가 성공",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                startActivity(intent);
                 getActivity().finish();
             }
         });
@@ -61,7 +68,11 @@ public class register1 extends Fragment {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               getActivity().finish();
+
+                dbHelper.delete("delete from timetable");
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                startActivity(intent);
+                getActivity().finish();
             }
         });
         final ImageButton mon_g = (ImageButton) view.findViewById(R.id.mon_g);
