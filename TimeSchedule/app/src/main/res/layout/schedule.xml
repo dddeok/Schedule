@@ -15,22 +15,34 @@
         android:id="@+id/main_frame"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:background="@drawable/rectangle_frame"
-            android:layout_weight="40">
+            android:layout_weight="40"
+            android:id="@+id/parent">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="시간표"
                 android:textColor="#51535d"
                 android:textSize="18sp"
+                android:layout_centerInParent="true"
                 android:gravity="center"
-                android:layout_gravity="center"
-                android:fontFamily="@font/nanumsquareeb"/>
-        </LinearLayout>
+                android:fontFamily="@font/nanumsquareeb"
+                android:id="@+id/ff"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:id="@+id/add_btn"
+                android:background="#ffffff"
+                android:clickable="true"
+                android:src="@drawable/add_btn"/>
+        </RelativeLayout>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -42,14 +54,15 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary">
+                android:background="#1a2338">
 
                 <TextView
                     android:text=""
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/cell_shape"
-                    android:layout_weight="1" />
+                    android:drawableStart="@drawable/ic_assignment_black_24dp"
+                    android:drawableLeft="@drawable/ic_assignment_black_24dp"
+                    android:layout_gravity="center"/>
                 <TextView
                     android:text="일"
                     android:layout_width="wrap_content"
@@ -67,7 +80,7 @@
                     android:textColor="#ffffff"
                     android:background="@drawable/cell_shape"
                     android:gravity="center_horizontal"
-                    android:fontFamily="@font/nanumsquarer"/>
+                    android:fontFamily="@font/nanumsquarer" />
                 <TextView
                     android:text="화"
                     android:layout_width="wrap_content"
@@ -85,7 +98,7 @@
                     android:textColor="#ffffff"
                     android:background="@drawable/cell_shape"
                     android:gravity="center_horizontal"
-                    android:fontFamily="@font/nanumsquarer"/>
+                    android:fontFamily="@font/nanumsquarer" />
                 <TextView
                     android:text="목"
                     android:layout_width="wrap_content"
@@ -103,7 +116,7 @@
                     android:textColor="#ffffff"
                     android:background="@drawable/cell_shape"
                     android:gravity="center_horizontal"
-                    android:fontFamily="@font/nanumsquarer"/>
+                    android:fontFamily="@font/nanumsquarer" />
                 <TextView
                     android:text="토"
                     android:layout_width="wrap_content"
@@ -112,7 +125,7 @@
                     android:textColor="#5497cc"
                     android:background="@drawable/cell_shape"
                     android:gravity="center_horizontal"
-                    android:fontFamily="@font/nanumsquarer"/>
+                    android:fontFamily="@font/nanumsquarer" />
             </TableRow>
 
             <TableRow
@@ -123,76 +136,97 @@
 
                 <TextView
                     android:text="9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/cell_shape"
+                      android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:padding="2dp"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun0"/>
-                <TextView
+                    android:id="@+id/sun0"
+                    android:autoSizeTextType="uniform" />
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon0"/>
-                <TextView
+                    android:id="@+id/mon0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue0"/>
-                <TextView
+                    android:id="@+id/tue0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen0"/>
-                <TextView
+                    android:id="@+id/wen0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu0"/>
-                <TextView
+                    android:id="@+id/thu0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri0"/>
-                <TextView
+                    android:id="@+id/fri0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat0"/>
+                    android:id="@+id/sat0"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -202,76 +236,96 @@
 
                 <TextView
                     android:text="10"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun1"/>
-                <TextView
+                    android:id="@+id/sun1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon1"/>
-                <TextView
+                    android:id="@+id/mon1"
+                    android:autoSizeTextType="uniform"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue1"/>
-                <TextView
+                    android:id="@+id/tue1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen1"/>
-                <TextView
+                    android:id="@+id/wen1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu1"/>
-                <TextView
+                    android:id="@+id/thu1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri1"/>
-                <TextView
+                    android:id="@+id/fri1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat1"/>
+                    android:id="@+id/sat1"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -281,76 +335,97 @@
 
                 <TextView
                     android:text="11"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun2"/>
-                <TextView
+                    android:id="@+id/sun2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon2"/>
-                <TextView
+                    android:id="@+id/mon2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue2"/>
-                <TextView
+                    android:id="@+id/tue2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen2"/>
-                <TextView
+                    android:id="@+id/wen2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu2"/>
-                <TextView
+                    android:id="@+id/thu2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri2"/>
-                <TextView
+                    android:id="@+id/fri2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat2"/>
+                    android:id="@+id/sat2"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -360,76 +435,97 @@
 
                 <TextView
                     android:text="12"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun3"/>
-                <TextView
+                    android:id="@+id/sun3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon3"/>
-                <TextView
+                    android:id="@+id/mon3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue3"/>
-                <TextView
+                    android:id="@+id/tue3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen3"/>
-                <TextView
+                    android:id="@+id/wen3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumsquarel"
+                    android:textAlignment="center"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu3"/>
-                <TextView
+                    android:id="@+id/thu3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri3"/>
-                <TextView
+                    android:id="@+id/fri3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat3"/>
+                    android:id="@+id/sat3"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -439,76 +535,97 @@
 
                 <TextView
                     android:text="13"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun4"/>
-                <TextView
+                    android:id="@+id/sun4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon4"/>
-                <TextView
+                    android:id="@+id/mon4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue4"/>
-                <TextView
+                    android:id="@+id/tue4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen4"/>
-                <TextView
+                    android:id="@+id/wen4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu4"/>
-                <TextView
+                    android:id="@+id/thu4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri4"/>
-                <TextView
+                    android:id="@+id/fri4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat4"/>
+                    android:id="@+id/sat4"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -519,76 +636,97 @@
 
                 <TextView
                     android:text="14"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun5"/>
-                <TextView
+                    android:id="@+id/sun5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon5"/>
-                <TextView
+                    android:id="@+id/mon5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue5"/>
-                <TextView
+                    android:id="@+id/tue5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen5"/>
-                <TextView
+                    android:id="@+id/wen5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu5"/>
-                <TextView
+                    android:id="@+id/thu5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri5"/>
-                <TextView
+                    android:id="@+id/fri5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat5"/>
+                    android:id="@+id/sat5"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -599,76 +737,97 @@
 
                 <TextView
                     android:text="15"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun6"/>
-                <TextView
+                    android:id="@+id/sun6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon6"/>
-                <TextView
+                    android:id="@+id/mon6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue6"/>
-                <TextView
+                    android:id="@+id/tue6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen6"/>
-                <TextView
+                    android:id="@+id/wen6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu6"/>
-                <TextView
+                    android:id="@+id/thu6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri6"/>
-                <TextView
+                    android:id="@+id/fri6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat6"/>
+                    android:id="@+id/sat6"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -679,76 +838,97 @@
 
                 <TextView
                     android:text="16"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun7"/>
-                <TextView
+                    android:id="@+id/sun7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon7"/>
-                <TextView
+                    android:id="@+id/mon7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue7"/>
-                <TextView
+                    android:id="@+id/tue7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen7"/>
-                <TextView
+                    android:id="@+id/wen7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu7"/>
-                <TextView
+                    android:id="@+id/thu7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri7"/>
-                <TextView
+                    android:id="@+id/fri7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat7"/>
+                    android:id="@+id/sat7"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -758,76 +938,97 @@
 
                 <TextView
                     android:text="17"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun8"/>
-                <TextView
+                    android:id="@+id/sun8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon8"/>
-                <TextView
+                    android:id="@+id/mon8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue8"/>
-                <TextView
+                    android:id="@+id/tue8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen8"/>
-                <TextView
+                    android:id="@+id/wen8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu8"/>
-                <TextView
+                    android:id="@+id/thu8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri8"/>
-                <TextView
+                    android:id="@+id/fri8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat8"/>
+                    android:id="@+id/sat8"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -837,76 +1038,97 @@
 
                 <TextView
                     android:text="18"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun9"/>
-                <TextView
+                    android:id="@+id/sun9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon9"/>
-                <TextView
+                    android:id="@+id/mon9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue9"/>
-                <TextView
+                    android:id="@+id/tue9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen9"/>
-                <TextView
+                    android:id="@+id/wen9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu9"/>
-                <TextView
+                    android:id="@+id/thu9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri9"/>
-                <TextView
+                    android:id="@+id/fri9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat9"/>
+                    android:id="@+id/sat9"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -917,76 +1139,98 @@
 
                 <TextView
                     android:text="19"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textColor="#ffffff"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
+                    android:background="@drawable/cell_shape"
+                    android:id="@+id/sun10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
+                    android:text=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:textColor="#ffffff"
+                     android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
+                    android:background="@drawable/cell_shape"
+                    android:id="@+id/mon10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
                     android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun10"/>
-                <TextView
+                    android:id="@+id/tue10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                     android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon10"/>
-                <TextView
+                    android:id="@+id/wen10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue10"/>
-                <TextView
+                    android:id="@+id/thu10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen10"/>
-                <TextView
+                    android:id="@+id/fri10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu10"/>
-                <TextView
-                    android:text=""
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:textColor="#ffffff"
-                    android:textStyle="bold"
-                    android:background="@drawable/cell_shape"
-                    android:id="@+id/fri10"/>
-                <TextView
-                    android:text=""
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:textColor="#ffffff"
-                    android:textStyle="bold"
-                    android:background="@drawable/cell_shape"
-                    android:id="@+id/sat10"/>
+                    android:id="@+id/sat10"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -997,76 +1241,97 @@
 
                 <TextView
                     android:text="20"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun11"/>
-                <TextView
+                    android:id="@+id/sun11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon11"/>
-                <TextView
+                    android:id="@+id/mon11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue11"/>
-                <TextView
+                    android:id="@+id/tue11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen11"/>
-                <TextView
+                    android:id="@+id/wen11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu11"/>
-                <TextView
+                    android:id="@+id/thu11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri11"/>
-                <TextView
+                    android:id="@+id/fri11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat11"/>
+                    android:id="@+id/sat11"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
 
             <TableRow
@@ -1077,87 +1342,98 @@
 
                 <TextView
                     android:text="21"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/cell_shape"
                     android:textColor="#ffffff"
                     android:fontFamily="@font/nanumsquarer"
-                    android:gravity="right"/>
-                <TextView
+                    android:gravity="right"
+                    android:paddingRight="1dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                     android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sun12"/>
-                <TextView
+                    android:id="@+id/sun12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/mon12"/>
-                <TextView
+                    android:id="@+id/mon12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/tue12"/>
-                <TextView
+                    android:id="@+id/tue12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/wen12"/>
-                <TextView
+                    android:id="@+id/wen12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/thu12"/>
-                <TextView
+                    android:id="@+id/thu12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/nanumsquarel"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/fri12"/>
-                <TextView
+                    android:id="@+id/fri12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
+                <com.example.dddeok.timeschedule.AutoResizeTextView
                     android:text=""
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/nanumsquarel"
+                    android:textAlignment="center"
                     android:background="@drawable/cell_shape"
-                    android:id="@+id/sat12"/>
+                    android:id="@+id/sat12"
+                    android:autoSizeTextType="uniform"
+                    android:padding="2dp"/>
             </TableRow>
         </TableLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/testdb"
-                android:textColor="#111111"/>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

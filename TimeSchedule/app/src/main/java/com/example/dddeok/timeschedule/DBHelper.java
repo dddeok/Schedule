@@ -54,22 +54,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery("select * from timetable", null);
         while(cursor.moveToNext()){
-            str +=cursor.getString(0)
-                    + " day :  "
-                    + cursor.getString(1)
-                    + ", _startime : "
-                    + cursor.getString(2)
-                    + ", _endtime : "
-                    + cursor.getString(3)
-                    + ", subject : "
-                    + cursor.getString(4)
-                    + ", professor : "
-                    + cursor.getString(5)
-                    + ", place : "
-                    + cursor.getString(6)
-                    + ", color : "
-                    + cursor.getString(7)
-                    + "\n";
+            str +=  " 강의날짜 :  "
+                    + cursor.getString(1) +"\n"
+                    + " 시작시간 : "
+                    + cursor.getString(2) +"\n"
+                    + " 종료시간 : "
+                    + cursor.getString(3) +"\n"
+                    + " 과목명 : "
+                    + cursor.getString(4) +"\n"
+                    + " 교수명 :  "
+                    + cursor.getString(5) +"\n"
+                    + " 장소 : "
+                    + cursor.getString(6) +"\n";
         }
         return str;
     }

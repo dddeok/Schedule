@@ -1,10 +1,13 @@
 package com.example.dddeok.timeschedule;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +27,25 @@ public class register1 extends Fragment {
     String color;
     boolean select_day = false, select_color = false;
 
+    private String mon[] = new String[13];
+    private String tue[] = new String[13];
+    private String wen[] = new String[13];
+    private String thu[] = new String[13];
+    private String fri[] = new String[13];
+    private String sat[] = new String[13];
+    private String sun[] = new String[13];
+
+    public register1(){
+        for(int i=0; i<13; i++){
+            mon[i]="";
+            tue[i]="";
+            wen[i]="";
+            thu[i]="";
+            fri[i]="";
+            sat[i]="";
+            sun[i]="";
+        }
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +63,71 @@ public class register1 extends Fragment {
         final EditText _subject = (EditText)view.findViewById(R.id.register_subject);
         final EditText _professor = (EditText)view.findViewById(R.id.register_professor);
         final EditText _place = (EditText)view.findViewById(R.id.register_place);
-        final TextView dbtest = (TextView) view.findViewById(R.id.dbtest);
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from timetable", null);
+        String tmp = "";
+        int starttime = 0 , endtime = 0;
+
+        while(cursor.moveToNext()) {
+            tmp = cursor.getString(1);
+            if (tmp.equals("mon")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.mon[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("tue")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.tue[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("wen")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.wen[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("thu")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.thu[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("fri")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.fri[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("sat")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.sat[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+            if (tmp.equals("sun")) {
+                starttime = Integer.parseInt(cursor.getString(2));
+                endtime = Integer.parseInt(cursor.getString(3));
+
+                for (int i = starttime - 9; i < endtime - 9; i++) {
+                    this.sun[i] = cursor.getString(4) + "\n" + cursor.getString(5);
+                }
+            }
+        }
 
         btn_make = (Button)view.findViewById(R.id.btn_make);
 
@@ -54,13 +140,17 @@ public class register1 extends Fragment {
                 String professor = _professor.getText().toString();
                 String place = _place.getText().toString();
 
-                dbHelper.insert("insert into timetable values(null, '"+ day + "', '"+_starttime + "', '"+_endtime + "', '"
-                                    + subject +"', '" + professor + "', '" + place + "', '" + color +"');" );
+                if(overLapCheck(_starttime, _endtime)){
+                    dbHelper.insert("insert into timetable values(null, '"+ day + "', '"+_starttime + "', '"+_endtime + "', '"
+                            + subject +"', '" + professor + "', '" + place + "', '" + color +"');" );
 
-                Toast.makeText(getActivity(),"시간 추가 성공",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                startActivity(intent);
-                getActivity().finish();
+                    Toast.makeText(getActivity(),"시간 추가 성공",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    startActivity(intent);
+                    getActivity().finish();
+                } else {
+                    Toast.makeText(getActivity(),"중복된 시간이 포함되어 있습니다",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -68,8 +158,6 @@ public class register1 extends Fragment {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                dbHelper.delete("delete from timetable");
                 Intent intent = new Intent(getActivity(),MainActivity.class);
                 startActivity(intent);
                 getActivity().finish();
@@ -514,5 +602,64 @@ public class register1 extends Fragment {
         });
 
         return view;
+    }
+
+    public boolean overLapCheck(String _starttime, String _endtime) {
+        Log.d(_starttime, "StartTime");
+        Log.d(_endtime, "EndTime");
+
+        int St = Integer.parseInt(_starttime);
+        int Ed = Integer.parseInt(_endtime);
+
+        if (day.equals("mon")) { ;
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!mon[i].equals("") || mon[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("tue")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!tue[i].equals("") || tue[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("wen")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!wen[i].equals("") || wen[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("thu")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!thu[i].equals("") || thu[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("fri")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!fri[i].equals("") || fri[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("sat")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!sat[i].equals("") || sat[i]!="") {
+                    return false;
+                }
+            }
+        }
+        if (day.equals("sun")) {
+            for (int i = St-9; i < Ed-9; i++) {
+                if (!sun[i].equals("") || sun[i]!="") {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

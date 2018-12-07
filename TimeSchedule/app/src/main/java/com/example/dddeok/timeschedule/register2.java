@@ -21,6 +21,8 @@ public class register2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = (View)inflater.inflate(R.layout.register_sleep,container,false);
 
+
+
         final ImageButton mon_b = (ImageButton) view.findViewById(R.id.mon_b);
         mon_b.setOnClickListener(new View.OnClickListener() {
             @Override
